@@ -42,7 +42,7 @@
               ng-model="buyItem.itemQuantity"
               placeholder="quantity"
             />
-            <button ng-click="buyItem.addItem();">
+            <button ng-click="buyItem.addItem();" ng-disabled="!buyItem.itemQuantity || !buyItem.itemName">
               Add Item To Shopping List
             </button>
           </div>
