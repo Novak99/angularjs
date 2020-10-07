@@ -1,0 +1,9 @@
+<div ng-repeat="item in items" class="sw-FoundItem">
+  {{$index + 1}}. {{ item.name }}
+  <button
+    class="btn btn-sm btn-warning"
+    ng-click="removeItem({index: $index});"
+  >
+    Don't want this one!
+  </button>
+</div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MenuCategoriesApp">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container" ng-controller="MenuCategoriesController as menu">
+      <h1>Narrow Down Your Chinese Menu Choice</h1>
+      <div class="sw-FlexBox">
+        <div class="form-group">
+          <input
+            type="text"
+            ng-model="menu.search"
+            ng-keyup="$event.keyCode == 13 ? menu.getItems(menu.search) : null"
+            placeholder="Search term"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group narrow-button">
+          <button
+            class="btn btn-info"
+            ng-click="menu.getItems(menu.search);menu.firstSearch = true;"
+          >
+            Narrow It Down For Me!
+          </button>
+        </div>
+      </div>
+      <found-items
+        items="menu.found"
+        remove-item="menu.removeItem(index)"
+      ></found-items>
+      <div class="loader" ng-show="menu.showLoader"></div>
+      <div ng-if="menu.showAlert" class="alert alert-info" role="alert">
+        Nothing found!
+      </div>
+    </div>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
