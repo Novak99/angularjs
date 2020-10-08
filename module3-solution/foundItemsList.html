@@ -1,5 +1,8 @@
 <div ng-repeat="item in items" class="sw-FoundItem">
-  {{$index + 1}}. {{ item.name }}
+  <section>
+    {{$index + 1}}. {{ item.name }}
+    <br /><span class="sw-FoundItem_Desc">{{ item.description }}</span>
+  </section>
   <button
     class="btn btn-sm btn-warning"
     ng-click="removeItem({index: $index});"
