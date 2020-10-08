@@ -63,6 +63,9 @@
         url: ApiBasePath + '/menu_items.json',
       })
         .then(function (response) {
+          if (!searchTerm){
+              return items;
+          }
           response.data.menu_items.forEach(function (item) {
             if (item.description.toLowerCase().indexOf(searchTerm) !== -1) {
               items.push(item);
