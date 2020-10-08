@@ -31,6 +31,7 @@
     menu.found = [];
 
     menu.getItems = function (searchTerm) {
+      menu.showAlert = false;
       var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
       menu.showLoader = true;
 
