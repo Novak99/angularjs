@@ -42,6 +42,11 @@ h1 {
 .sw-FoundItem:last-child {
   border-bottom: 2px solid #ddd;
 }
+.sw-FoundItem_Desc {
+  display: block;
+  font-size: 14px;
+  color: #7d8b9a;
+}
 .loader {
   margin: 0 auto;
   font-size: 10px;
